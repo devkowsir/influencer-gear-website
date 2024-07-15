@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --orange-60: 31, 100%, 49%;
+  --dark: 0, 0%, 0%;
+  --gray-50: 240, 5%, 50%;
+
+  font-family: "Poppins", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+p {
+  color: hsl(var(--dark-3));
+  line-height: 26px;
+}
+
+section {
+  margin: clamp(64px, calc(4.57vw + 45.71px), 128px) 0;
+}
+
+.fluid {
+  max-width: 100%;
+}
+
+.btn {
+  padding: clamp(8px, calc(1.5vw + 2px), 20px) clamp(16px, calc(1vw + 12px), 24px);
+  font-size: clamp(16px, calc(0.5vw + 14px), 20px);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--white));
+}
+
+.btn-secondary {
+  color: hsl(var(--dark-1));
+  background-color: transparent;
+  border: 1px solid hsl(var(--primary));
+}
+
+.container {
+  width: clamp(320px, 80vw, 1440px);
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    width: max(320px, 90%);
+  }
+}
