@@ -25,8 +25,7 @@ a {
 }
 
 p {
-  color: hsl(var(--dark-3));
-  line-height: 26px;
+  font-size: 1rem;
 }
 
 ul {
@@ -67,12 +66,6 @@ section {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 576px) {
-  .container {
-    width: 95%;
-  }
-}
-
 @keyframes dissapear {
   0% {
     display: initial;
@@ -103,6 +96,7 @@ header .nav-links {
   position: absolute;
   top: 100%;
   left: 0;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -186,4 +180,91 @@ header .sponsors {
 
 header .sponsors li {
   width: 80px;
+}
+
+/* Popular section */
+#popular h2 {
+  font-size: clamp(24px, calc(0.76vw + 20.92px), 32px);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#popular .products {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(299px, 1fr));
+  gap: clamp(16px, calc(1.53vw + 9.84px), 32px);
+}
+
+#popular .products li {
+  padding: 8%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+}
+
+#popular .products li:hover {
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+  transform-origin: center center;
+  transform: scale(1.02);
+  transition: 0.2s transform ease-in;
+}
+
+#popular .products .fluid {
+  width: 100%;
+}
+
+#popular .products h3 {
+  margin: 16px 0 0;
+  font-size: clamp(20px, calc(0.76vw + 16.92px), 28px);
+  text-transform: capitalize;
+}
+
+#popular .products .price {
+  margin: 8px 0 2px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#popular .products .rating {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#popular .rating .stars {
+  margin: 4px 0 0;
+  display: inline-block;
+}
+
+#popular .products p {
+  margin: 4px 0;
+  color: hsl(var(--gray-50));
+}
+
+#popular .see-more {
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+#popular .see-more .btn {
+  cursor: pointer;
+  background: transparent;
+  color: hsl(var(--primary));
+}
+
+@media screen and (min-width: 1192px) {
+  #popular {
+    margin-bottom: clamp(200px, calc(9.8vw + 82.35px), 240px);
+  }
+  #popular .see-more {
+    padding: 2rem 0 !important;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 100%);
+  }
 }
