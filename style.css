@@ -268,3 +268,32 @@ header .sponsors li {
     transform: translate(-50%, 100%);
   }
 }
+
+/* Promotion section */
+#promotion .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(32px, calc(3.07vw + 19.69px), 64px);
+  text-align: center;
+}
+
+#promotion h2 {
+  font-size: clamp(24px, calc(0.76vw + 20.92px), 32px);
+  font-weight: 600;
+}
+
+#promotion p {
+  margin: clamp(16px, calc(1.53vw + 9.84px), 32px) 0 clamp(20px, calc(1.92vw + 12.3px), 40px);
+}
+
+@media screen and (min-width: 992px) {
+  #promotion .container {
+    flex-direction: row-reverse;
+  }
+
+  #promotion .image {
+    width: min(600px, 40%);
+    flex-shrink: 0;
+  }
+}
