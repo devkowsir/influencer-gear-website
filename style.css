@@ -297,3 +297,27 @@ header .sponsors li {
     flex-shrink: 0;
   }
 }
+
+/* footer section */
+footer {
+  padding: 3rem 0;
+  background-color: #0a0826;
+  color: hsl(var(--white));
+  text-align: center;
+}
+
+footer h2 {
+  font-size: clamp(24px, calc(0.76vw + 20.92px), 32px);
+}
+
+footer p {
+  line-height: 2;
+  margin-bottom: 2rem;
+}
+
+footer .social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(16px, calc(1.53vw + 9.84px), 32px);
+}
