@@ -66,19 +66,6 @@ section {
   margin: 0 auto;
 }
 
-@keyframes dissapear {
-  0% {
-    display: initial;
-  }
-  100% {
-    display: none;
-  }
-}
-
-.hidden {
-  display: none !important;
-}
-
 /* header section */
 header {
   position: relative;
@@ -97,7 +84,7 @@ header .nav-links {
   top: 100%;
   left: 0;
   z-index: 1;
-  display: flex;
+  display: none;
   flex-direction: column;
   text-align: center;
   padding: 1rem 0;
@@ -135,15 +122,18 @@ header .nav-icons {
 }
 
 header .banner {
-  margin-top: clamp(20px, calc(2.69vw + 9.23px), 48px);
+  margin: clamp(20px, calc(2.69vw + 9.23px), 48px) 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: clamp(16px, calc(3.07vw + 3.69px), 48px);
 }
 
 header .image {
   position: relative;
   width: 100%;
+  max-width: 400px;
   aspect-ratio: 1/1;
   background: url("./images/icons/circle-design.svg") center center;
   background-size: cover;
@@ -180,6 +170,42 @@ header .sponsors {
 
 header .sponsors li {
   width: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  header nav .menu {
+    display: none;
+  }
+
+  header nav .brand {
+    margin: 0;
+  }
+
+  header nav .nav-links {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: clamp(16px, calc(2.38vw - 2.39px), 32px);
+    margin: 0 1rem 0 auto;
+    width: max-content;
+  }
+
+  header nav .nav-icons {
+    gap: clamp(16px, calc(2.38vw - 2.39px), 32px);
+  }
+
+  header nav .nav-links .link,
+  header nav .nav-links .link:first-child {
+    border: none;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  header .banner {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 /* Popular section */

@@ -19,7 +19,7 @@
         <nav>
           <button class="menu"><i class="fa-solid fa-xl fa-bars"></i></button>
           <div class="brand"><a href="./home.html">Influencer Gear</a></div>
-          <ul class="nav-links hidden">
+          <ul class="nav-links">
             <li class="link"><a href="./home.html">Home</a></li>
             <li class="link"><a href="./products.html">Products</a></li>
             <li class="link"><a href="./sign-up.html">Sign Up</a></li>
@@ -40,16 +40,16 @@
             </p>
             <button class="btn btn-primary">Prebook now <i class="fa-solid fa-lg fa-arrow-right"></i></button>
           </div>
-          <ul class="sponsors">
-            <li><img class="fluid" src="./images/icons/brands/Alibaba.svg" alt="Alibaba" /></li>
-            <li><img class="fluid" src="./images/icons/brands/Amazon.svg" alt="Amazon" /></li>
-            <li><img class="fluid" src="./images/icons/brands/Daraz.svg" alt="Daraz" /></li>
-            <li><img class="fluid" src="./images/icons/brands/Ebay.svg" alt="Ebay" /></li>
-            <li><img class="fluid" src="./images/icons/brands/Rakuten.svg" alt="Rakuten" /></li>
-            <li><img class="fluid" src="./images/icons/brands/Walmart.svg" alt="Walmart" /></li>
-            <li><img class="fluid" src="./images/icons/brands/Target.svg" alt="Target" /></li>
-          </ul>
         </div>
+        <ul class="sponsors">
+          <li><img class="fluid" src="./images/icons/brands/Alibaba.svg" alt="Alibaba" /></li>
+          <li><img class="fluid" src="./images/icons/brands/Amazon.svg" alt="Amazon" /></li>
+          <li><img class="fluid" src="./images/icons/brands/Daraz.svg" alt="Daraz" /></li>
+          <li><img class="fluid" src="./images/icons/brands/Ebay.svg" alt="Ebay" /></li>
+          <li><img class="fluid" src="./images/icons/brands/Rakuten.svg" alt="Rakuten" /></li>
+          <li><img class="fluid" src="./images/icons/brands/Walmart.svg" alt="Walmart" /></li>
+          <li><img class="fluid" src="./images/icons/brands/Target.svg" alt="Target" /></li>
+        </ul>
       </div>
     </header>
     <main>
@@ -246,10 +246,12 @@
     <script>
       const menu = document.querySelector(".menu");
       const links = document.querySelector("ul.nav-links");
-
-      menu.addEventListener("click", () => {
-        links.classList.toggle("hidden");
-      });
+      if (menu && links) {
+        menu.addEventListener("click", () => {
+          if (links.style.display != "flex") links.style.display = "flex";
+          else links.style.display = "none";
+        });
+      }
     </script>
   </body>
 </html>
