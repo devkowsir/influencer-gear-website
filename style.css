@@ -4,6 +4,8 @@
   --orange-60: 31, 100%, 49%;
   --dark: 0, 0%, 0%;
   --gray-50: 240, 5%, 50%;
+  --primary: 338, 74%, 53%;
+  --white: 0, 0%, 100%;
 
   font-family: "Poppins", sans-serif;
 }
@@ -27,6 +29,10 @@ p {
   line-height: 26px;
 }
 
+ul {
+  list-style-type: none;
+}
+
 section {
   margin: clamp(64px, calc(4.57vw + 45.71px), 128px) 0;
 }
@@ -36,12 +42,13 @@ section {
 }
 
 .btn {
-  padding: clamp(8px, calc(1.5vw + 2px), 20px) clamp(16px, calc(1vw + 12px), 24px);
-  font-size: clamp(16px, calc(0.5vw + 14px), 20px);
-  font-weight: 600;
-  border-radius: 0.5rem;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 900;
+  border-radius: 40px;
   border: none;
   cursor: pointer;
+  line-height: 1.5;
 }
 
 .btn-primary {
@@ -50,7 +57,7 @@ section {
 }
 
 .btn-secondary {
-  color: hsl(var(--dark-1));
+  color: hsl(var(--dark));
   background-color: transparent;
   border: 1px solid hsl(var(--primary));
 }
@@ -62,6 +69,121 @@ section {
 
 @media screen and (max-width: 576px) {
   .container {
-    width: max(320px, 90%);
+    width: 95%;
   }
+}
+
+@keyframes dissapear {
+  0% {
+    display: initial;
+  }
+  100% {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* header section */
+header {
+  position: relative;
+  margin-top: clamp(36px, calc(5.09vw + 6.66px), 80px);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+header .nav-links {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem 0;
+  background-color: hsl(var(--white));
+  transition: all 0.2s ease-in-out;
+}
+
+header .nav-links .link {
+  padding: 2px 0;
+  border-bottom: 1px solid hsl(var(--dark));
+}
+
+header .nav-links .link:first-child {
+  border-top: 1px solid hsl(var(--dark));
+}
+
+header .menu {
+  margin-right: 32px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+header .brand {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 24px;
+  margin: 0 auto;
+}
+
+header .nav-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+header .banner {
+  margin-top: clamp(20px, calc(2.69vw + 9.23px), 48px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, calc(3.07vw + 3.69px), 48px);
+}
+
+header .image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: url("./images/icons/circle-design.svg") center center;
+  background-size: cover;
+}
+
+header .image img {
+  position: absolute;
+  top: 48%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+}
+
+header .content {
+  text-align: center;
+}
+
+header .content h1 {
+  font-size: clamp(28px, calc(2.3vw + 18.76px), 52px);
+}
+
+header .content p {
+  margin: 1rem auto 1.25rem;
+}
+
+header .sponsors {
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+header .sponsors li {
+  width: 80px;
 }

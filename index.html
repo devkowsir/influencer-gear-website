@@ -5,17 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Influencer Gear</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- <link
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    /> -->
+    />
   </head>
   <body>
-    <header></header>
+    <header>
+      <div class="container">
+        <nav>
+          <button class="menu"><i class="fa-solid fa-xl fa-bars"></i></button>
+          <div class="brand"><a href="./home.html">Influencer Gear</a></div>
+          <ul class="nav-links hidden">
+            <li class="link"><a href="./home.html">Home</a></li>
+            <li class="link"><a href="./products.html">Products</a></li>
+            <li class="link"><a href="./sign-up.html">Sign Up</a></li>
+            <li class="link"><a href="./log-in.html">Log In</a></li>
+          </ul>
+          <div class="nav-icons">
+            <a href="./search.html"><i class="fa-solid fa-lg fa-magnifying-glass"></i></i></a>
+            <a href="./cart.html"><i class="fa-solid fa-lg fa-cart-shopping"></i></a>
+          </div>
+        </nav>
+        <div class="banner">
+          <div class="image"><img class="fluid" src="./images/main-camera.png" alt="camera"></div>
+          <div class="content">
+            <h1>Start your Journey as Influencer</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem vestibulum sed scelerisque eros. Lectus
+              faucibus.
+            </p>
+            <button class="btn btn-primary">
+              Prebook now <i class="fa-solid fa-lg fa-arrow-right"></i>
+            </button>
+          </div>
+          <ul class="sponsors">
+            <li><img class="fluid" src="./images/icons/brands/Alibaba.svg" alt="Alibaba" /></li>
+            <li><img class="fluid" src="./images/icons/brands/Amazon.svg" alt="Amazon" /></li>
+            <li><img class="fluid" src="./images/icons/brands/Daraz.svg" alt="Daraz" /></li>
+            <li><img class="fluid" src="./images/icons/brands/Ebay.svg" alt="Ebay" /></li>
+            <li><img class="fluid" src="./images/icons/brands/Rakuten.svg" alt="Rakuten" /></li>
+            <li><img class="fluid" src="./images/icons/brands/Walmart.svg" alt="Walmart" /></li>
+            <li><img class="fluid" src="./images/icons/brands/Target.svg" alt="Target" /></li>
+          </ul>
+        </div>
+      </div>
+    </header>
     <main></main>
     <footer></footer>
+    <script>
+      const menu = document.querySelector(".menu");
+      const links = document.querySelector("ul.nav-links");
+
+      menu.addEventListener("click", () => {
+        links.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>
